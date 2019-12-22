@@ -1,0 +1,34 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia
+  labels:
+    name: kubia
+spec:
+  containers:
+  - name: kubia
+    image: koteikin/kubia
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - name: http
+        containerPort: 8080
+      - name: https
+        containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  kubia
+spec:
+  selector:
+    app:  kubia
+  ports:
+  - name:  http
+    port:  80
+# Указываем данные порта по имени из описания Pod'a    
+    targetPort:  http

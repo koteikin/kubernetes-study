@@ -1,0 +1,23 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+#  name должен совпадать с именеи службы Endpoints
+  name:  external-service
+spec:
+  ports:
+  - port:  80
+
+---
+apiVersion: v1
+kind: Endpoints
+meta:
+#  name должен совпадать с именеи службы Service
+  name: external-service
+subsets:
+- adresses:
+  - 11.11.11.11
+  - 22.22.22.22
+  ports:
+#  Целевой порт Endpoints  
+  - port: 80

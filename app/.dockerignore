@@ -1,0 +1,6 @@
+# игнорировать каталоги .git и .cache 
+.git
+.cache
+.gitlab-ci.yml
+readme.md
+hetzner*.txt

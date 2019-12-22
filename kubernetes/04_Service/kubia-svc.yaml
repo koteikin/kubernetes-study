@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia
+spec:
+  ports:
+# Порт в котором служба будет доступна  
+  - port: 80
+# Порт контейнера, куда будут перенаправлены запросы с 80
+    targetPort: 8080
+# Все контейнеры с меткой app=kubia будут доступны через службу    
+  selector:
+    app: kubia

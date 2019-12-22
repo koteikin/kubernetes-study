@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-manual-hetzner
+spec:
+  nodeSelector:
+    datacenter: "hetzner"
+  containers:
+  - image: koteikin/kubia
+    name: kubia
+    ports:
+    - containerPort: 8080
+      protocol: TCP

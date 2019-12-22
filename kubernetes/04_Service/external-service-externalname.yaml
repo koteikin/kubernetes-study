@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  externel-service
+spec:
+  type:  ExternalName
+  externalName: someapi.example.com
+  ports:
+  - port:  80
