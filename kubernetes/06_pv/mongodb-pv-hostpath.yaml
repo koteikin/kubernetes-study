@@ -5,7 +5,6 @@ metadata:
 spec: 
   capacity:
     storage: 1Gi
-  storageClassName: fast
   accessModes:
     - ReadWriteOnce
     - ReadOnlyMany
